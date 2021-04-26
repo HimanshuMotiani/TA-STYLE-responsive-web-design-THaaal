@@ -61,6 +61,9 @@ table {
     width: 100%;
     padding: 0 2rem;
 }
+#toggle, .bars{
+    display: none;
+}
 body{
     font-size: 1rem;
     line-height: 1.5;
@@ -84,9 +87,11 @@ html{
     position: absolute;
     width: 100%;
 }
-h3{
+.heading .brand{
     font-size: 2.0rem;
-    font-family: 700;
+    font-family: 800;
+    color: white;
+    text-decoration: none;
 }
 .links a{
     text-transform: uppercase;
@@ -117,7 +122,6 @@ text-decoration: none;
 }
 .size{
     width: 450px;
-    height: 550px;
 }
 .image-container{
     text-align: end;
@@ -385,19 +389,98 @@ font-weight: 900;
 }
 
 
-/* media */
+ /* media */ 
+/* @media screen and (max-width:1200px){
+    .container{
+        margin: 1160px;
+    }
+} */
 
+@media screen and (max-width:992px){
+    .container{
+        max-width:  960px;
+    }
+    html{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width:576px){
+    .container{
+        max-width: 540px;
+    }
+    html{
+        font-size: 10px;
+    }
+} 
 @media screen and (max-width:768px){
     .container{
         max-width: 720px;
     }
     html{
-        font-size: 10px;
+        font-size: 12px;
     }
-    .flex-100{
+    .sm-flex-100{
         flex: 0 1 100%;
+        margin: 2rem 0;
     }
-    .wrap{
+    .sm-wrap{
         flex-wrap: wrap;
     }
+    .sm-width-full{
+        width: 100%;
+        margin: 2rem 0;
+    }
+
+    .nav{
+        display: none;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100vh;
+        background-color: rgba(35,53,123,.9);
+        padding-top: 12rem;
+        z-index: 9;
+    }
+    #toggle:checked ~ .nav{
+        display: inline-block;
+    }
+    .bars{
+        display: inline-block;
+        font-size: 2rem;
+        color: var(--white);
+    }
+    .sm-column{
+        flex-direction: column;
+    }
+    .nav-item{
+        margin: 16px 0;
+    }
+    .brand,.bars{
+        position: fixed;
+        top: 1.5rem;
+        z-index: 99;
+    }
+    .brand{
+        left:2rem;
+    }
+    .bars{
+        right: 2rem;
+    }
+    .hero{
+        height: auto;
+        margin: 4rem 0;
+    }
+    .sm-text-center{
+        text-align: center;
+    }
+    .upper-footer a{
+        margin-right: 0rem;
+        
+    }
+    .justify-content{
+        justify-content: center;
+    }
+
 }
